@@ -8,28 +8,20 @@ namespace NickNameGenerator
 {
     public class FileOpener
     {
-        private string[] _nouns;
 
-        public FileOpener(string path) 
+        public string[] getWordsFromTextFile(string path)
         {
-
             if (File.Exists(path))
             {
                 string[] nouns = File.ReadAllLines(path);
-                _nouns = nouns;
-
+                return nouns;
             }
             else
             {
-                MessageBox.Show("File not found!","Error");
+                MessageBox.Show("File not found!", "Error");
+                Environment.Exit(1);
+                return null;
             }
-
-        }
-
-
-        public string[] getNouns()
-        {
-            return _nouns;
         }
     }
 }

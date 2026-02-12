@@ -4,19 +4,24 @@ namespace NickNameGenerator
     {
 
         private string[] _nouns;
+        private string[] _adjectives;
+
 
         public Form1()
         {
             InitializeComponent();
-            FileOpener fp = new FileOpener("nouns.txt");
-            _nouns = fp.getNouns();
+            FileOpener fp = new FileOpener();
+            _nouns = fp.getWordsFromTextFile("nouns.txt");
+            _adjectives = fp.getWordsFromTextFile("adjectives.txt");
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Random rand = new Random();
-            string name = _nouns[rand.Next(_nouns.Length)];
-            textBoxNouns.Text = name;
+            string noun = _nouns[rand.Next(_nouns.Length)];
+            string adjective = _nouns[rand.Next(_adjectives.Length)];
+            textBoxNouns.Text = adjective + " " + noun;
         }
     }
 
