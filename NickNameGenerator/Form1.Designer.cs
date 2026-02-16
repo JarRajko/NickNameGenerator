@@ -34,13 +34,15 @@
             checkBoxPrefix = new CheckBox();
             checkBoxPostfix = new CheckBox();
             labelText = new Label();
+            button2 = new Button();
+            checkBox1 = new CheckBox();
             SuspendLayout();
             // 
             // button1
             // 
             button1.Location = new Point(12, 5);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(127, 23);
             button1.TabIndex = 1;
             button1.Text = "Generate!";
             button1.UseVisualStyleBackColor = true;
@@ -49,17 +51,18 @@
             // checkBoxAdjective
             // 
             checkBoxAdjective.AutoSize = true;
-            checkBoxAdjective.Location = new Point(12, 40);
+            checkBoxAdjective.Location = new Point(12, 79);
             checkBoxAdjective.Name = "checkBoxAdjective";
             checkBoxAdjective.Size = new Size(75, 19);
             checkBoxAdjective.TabIndex = 2;
             checkBoxAdjective.Text = "Adjective";
             checkBoxAdjective.UseVisualStyleBackColor = true;
+            checkBoxAdjective.CheckedChanged += checkBoxAdjective_CheckedChanged;
             // 
             // checkBoxNumber
             // 
             checkBoxNumber.AutoSize = true;
-            checkBoxNumber.Location = new Point(102, 63);
+            checkBoxNumber.Location = new Point(12, 104);
             checkBoxNumber.Name = "checkBoxNumber";
             checkBoxNumber.Size = new Size(70, 19);
             checkBoxNumber.TabIndex = 3;
@@ -70,7 +73,7 @@
             // checkBoxPrefix
             // 
             checkBoxPrefix.AutoSize = true;
-            checkBoxPrefix.Location = new Point(12, 90);
+            checkBoxPrefix.Location = new Point(12, 129);
             checkBoxPrefix.Name = "checkBoxPrefix";
             checkBoxPrefix.Size = new Size(56, 19);
             checkBoxPrefix.TabIndex = 4;
@@ -80,7 +83,7 @@
             // checkBoxPostfix
             // 
             checkBoxPostfix.AutoSize = true;
-            checkBoxPostfix.Location = new Point(12, 115);
+            checkBoxPostfix.Location = new Point(12, 154);
             checkBoxPostfix.Name = "checkBoxPostfix";
             checkBoxPostfix.Size = new Size(62, 19);
             checkBoxPostfix.TabIndex = 5;
@@ -89,10 +92,31 @@
             // 
             // labelText
             // 
-            labelText.Location = new Point(102, 9);
+            labelText.Location = new Point(234, 5);
             labelText.Name = "labelText";
             labelText.Size = new Size(316, 23);
             labelText.TabIndex = 6;
+            labelText.Click += labelText_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(12, 34);
+            button2.Name = "button2";
+            button2.Size = new Size(127, 23);
+            button2.TabIndex = 7;
+            button2.Text = "Apply changes";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(12, 179);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(84, 19);
+            checkBox1.TabIndex = 8;
+            checkBox1.Text = "Numberize";
+            checkBox1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -100,6 +124,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(562, 236);
+            Controls.Add(checkBox1);
+            Controls.Add(button2);
             Controls.Add(labelText);
             Controls.Add(checkBoxPostfix);
             Controls.Add(checkBoxPrefix);
@@ -120,5 +146,7 @@
         private CheckBox checkBoxPrefix;
         private CheckBox checkBoxPostfix;
         private Label labelText;
+        private Button button2;
+        private CheckBox checkBox1;
     }
 }
