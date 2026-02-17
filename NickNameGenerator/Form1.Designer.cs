@@ -34,8 +34,12 @@
             checkBoxPrefix = new CheckBox();
             checkBoxPostfix = new CheckBox();
             labelText = new Label();
-            button2 = new Button();
-            checkBox1 = new CheckBox();
+            adjectiveButton = new Button();
+            numerizeCheckbox = new CheckBox();
+            numberButton = new Button();
+            prefixButton = new Button();
+            postfixButton = new Button();
+            numberizeButton = new Button();
             SuspendLayout();
             // 
             // button1
@@ -96,27 +100,67 @@
             labelText.Name = "labelText";
             labelText.Size = new Size(316, 23);
             labelText.TabIndex = 6;
-            labelText.Click += labelText_Click;
             // 
-            // button2
+            // adjectiveButton
             // 
-            button2.Location = new Point(12, 34);
-            button2.Name = "button2";
-            button2.Size = new Size(127, 23);
-            button2.TabIndex = 7;
-            button2.Text = "Apply changes";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            adjectiveButton.Location = new Point(93, 75);
+            adjectiveButton.Name = "adjectiveButton";
+            adjectiveButton.Size = new Size(100, 23);
+            adjectiveButton.TabIndex = 7;
+            adjectiveButton.Text = "Apply changes";
+            adjectiveButton.UseVisualStyleBackColor = true;
+            adjectiveButton.Click += adjectiveButton_Click;
             // 
-            // checkBox1
+            // numerizeCheckbox
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(12, 179);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(84, 19);
-            checkBox1.TabIndex = 8;
-            checkBox1.Text = "Numberize";
-            checkBox1.UseVisualStyleBackColor = true;
+            numerizeCheckbox.AutoSize = true;
+            numerizeCheckbox.Location = new Point(12, 179);
+            numerizeCheckbox.Name = "numerizeCheckbox";
+            numerizeCheckbox.Size = new Size(84, 19);
+            numerizeCheckbox.TabIndex = 8;
+            numerizeCheckbox.Text = "Numberize";
+            numerizeCheckbox.UseVisualStyleBackColor = true;
+            numerizeCheckbox.CheckedChanged += numerizeCheckbox_CheckedChanged;
+            // 
+            // numberButton
+            // 
+            numberButton.Location = new Point(93, 101);
+            numberButton.Name = "numberButton";
+            numberButton.Size = new Size(100, 23);
+            numberButton.TabIndex = 9;
+            numberButton.Text = "Apply changes";
+            numberButton.UseVisualStyleBackColor = true;
+            numberButton.Click += numberButton_Click;
+            // 
+            // prefixButton
+            // 
+            prefixButton.Location = new Point(93, 125);
+            prefixButton.Name = "prefixButton";
+            prefixButton.Size = new Size(100, 23);
+            prefixButton.TabIndex = 10;
+            prefixButton.Text = "Apply changes";
+            prefixButton.UseVisualStyleBackColor = true;
+            prefixButton.Click += prefixButton_Click;
+            // 
+            // postfixButton
+            // 
+            postfixButton.Location = new Point(93, 150);
+            postfixButton.Name = "postfixButton";
+            postfixButton.Size = new Size(100, 23);
+            postfixButton.TabIndex = 11;
+            postfixButton.Text = "Apply changes";
+            postfixButton.UseVisualStyleBackColor = true;
+            postfixButton.Click += postfixButton_Click;
+            // 
+            // numberizeButton
+            // 
+            numberizeButton.Location = new Point(93, 175);
+            numberizeButton.Name = "numberizeButton";
+            numberizeButton.Size = new Size(100, 23);
+            numberizeButton.TabIndex = 12;
+            numberizeButton.Text = "Apply changes";
+            numberizeButton.UseVisualStyleBackColor = true;
+            numberizeButton.Click += numberizeButton_Click;
             // 
             // Form1
             // 
@@ -124,8 +168,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(562, 236);
-            Controls.Add(checkBox1);
-            Controls.Add(button2);
+            Controls.Add(numberizeButton);
+            Controls.Add(postfixButton);
+            Controls.Add(prefixButton);
+            Controls.Add(numberButton);
+            Controls.Add(numerizeCheckbox);
+            Controls.Add(adjectiveButton);
             Controls.Add(labelText);
             Controls.Add(checkBoxPostfix);
             Controls.Add(checkBoxPrefix);
@@ -146,7 +194,11 @@
         private CheckBox checkBoxPrefix;
         private CheckBox checkBoxPostfix;
         private Label labelText;
-        private Button button2;
-        private CheckBox checkBox1;
+        private Button adjectiveButton;
+        private CheckBox numerizeCheckbox;
+        private Button numberButton;
+        private Button prefixButton;
+        private Button postfixButton;
+        private Button numberizeButton;
     }
 }
