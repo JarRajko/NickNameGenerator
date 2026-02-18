@@ -124,5 +124,14 @@ namespace NickNameGenerator
         {
             UpdateLabel();
         }
+
+        private void copyButton_Click(object sender, EventArgs e)
+        {
+            if (labelText.Text != "")
+            {
+                Clipboard.SetText(labelText.Text);
+                MessageBox.Show("Text \"" + labelText.Text + "\" copied succesfully!","Success");
+            }
+        }
     }
 }

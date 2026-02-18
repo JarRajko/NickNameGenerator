@@ -40,6 +40,7 @@
             prefixButton = new Button();
             postfixButton = new Button();
             numberizeButton = new Button();
+            copyButton = new Button();
             SuspendLayout();
             // 
             // button1
@@ -162,12 +163,23 @@
             numberizeButton.UseVisualStyleBackColor = true;
             numberizeButton.Click += numberizeButton_Click;
             // 
+            // copyButton
+            // 
+            copyButton.Location = new Point(323, 31);
+            copyButton.Name = "copyButton";
+            copyButton.Size = new Size(134, 23);
+            copyButton.TabIndex = 13;
+            copyButton.Text = "Copy to clipboard!";
+            copyButton.UseVisualStyleBackColor = true;
+            copyButton.Click += copyButton_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             ClientSize = new Size(562, 236);
+            Controls.Add(copyButton);
             Controls.Add(numberizeButton);
             Controls.Add(postfixButton);
             Controls.Add(prefixButton);
@@ -200,5 +212,6 @@
         private Button prefixButton;
         private Button postfixButton;
         private Button numberizeButton;
+        private Button copyButton;
     }
 }
