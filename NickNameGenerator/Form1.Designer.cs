@@ -41,6 +41,10 @@
             postfixButton = new Button();
             numberizeButton = new Button();
             copyButton = new Button();
+            randomButton = new Button();
+            lengthTrackBar = new TrackBar();
+            label1 = new Label();
+            ((System.ComponentModel.ISupportInitialize)lengthTrackBar).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -56,7 +60,7 @@
             // checkBoxAdjective
             // 
             checkBoxAdjective.AutoSize = true;
-            checkBoxAdjective.Location = new Point(12, 79);
+            checkBoxAdjective.Location = new Point(12, 150);
             checkBoxAdjective.Name = "checkBoxAdjective";
             checkBoxAdjective.Size = new Size(75, 19);
             checkBoxAdjective.TabIndex = 2;
@@ -67,7 +71,7 @@
             // checkBoxNumber
             // 
             checkBoxNumber.AutoSize = true;
-            checkBoxNumber.Location = new Point(12, 104);
+            checkBoxNumber.Location = new Point(12, 175);
             checkBoxNumber.Name = "checkBoxNumber";
             checkBoxNumber.Size = new Size(70, 19);
             checkBoxNumber.TabIndex = 3;
@@ -78,7 +82,7 @@
             // checkBoxPrefix
             // 
             checkBoxPrefix.AutoSize = true;
-            checkBoxPrefix.Location = new Point(12, 129);
+            checkBoxPrefix.Location = new Point(12, 200);
             checkBoxPrefix.Name = "checkBoxPrefix";
             checkBoxPrefix.Size = new Size(56, 19);
             checkBoxPrefix.TabIndex = 4;
@@ -88,7 +92,7 @@
             // checkBoxPostfix
             // 
             checkBoxPostfix.AutoSize = true;
-            checkBoxPostfix.Location = new Point(12, 154);
+            checkBoxPostfix.Location = new Point(12, 225);
             checkBoxPostfix.Name = "checkBoxPostfix";
             checkBoxPostfix.Size = new Size(62, 19);
             checkBoxPostfix.TabIndex = 5;
@@ -104,9 +108,9 @@
             // 
             // adjectiveButton
             // 
-            adjectiveButton.Location = new Point(93, 75);
+            adjectiveButton.Location = new Point(91, 146);
             adjectiveButton.Name = "adjectiveButton";
-            adjectiveButton.Size = new Size(100, 23);
+            adjectiveButton.Size = new Size(102, 23);
             adjectiveButton.TabIndex = 7;
             adjectiveButton.Text = "Apply changes";
             adjectiveButton.UseVisualStyleBackColor = true;
@@ -115,7 +119,7 @@
             // numerizeCheckbox
             // 
             numerizeCheckbox.AutoSize = true;
-            numerizeCheckbox.Location = new Point(12, 179);
+            numerizeCheckbox.Location = new Point(12, 250);
             numerizeCheckbox.Name = "numerizeCheckbox";
             numerizeCheckbox.Size = new Size(84, 19);
             numerizeCheckbox.TabIndex = 8;
@@ -125,9 +129,9 @@
             // 
             // numberButton
             // 
-            numberButton.Location = new Point(93, 101);
+            numberButton.Location = new Point(91, 172);
             numberButton.Name = "numberButton";
-            numberButton.Size = new Size(100, 23);
+            numberButton.Size = new Size(102, 23);
             numberButton.TabIndex = 9;
             numberButton.Text = "Apply changes";
             numberButton.UseVisualStyleBackColor = true;
@@ -135,9 +139,9 @@
             // 
             // prefixButton
             // 
-            prefixButton.Location = new Point(93, 125);
+            prefixButton.Location = new Point(91, 196);
             prefixButton.Name = "prefixButton";
-            prefixButton.Size = new Size(100, 23);
+            prefixButton.Size = new Size(102, 23);
             prefixButton.TabIndex = 10;
             prefixButton.Text = "Apply changes";
             prefixButton.UseVisualStyleBackColor = true;
@@ -145,9 +149,9 @@
             // 
             // postfixButton
             // 
-            postfixButton.Location = new Point(93, 150);
+            postfixButton.Location = new Point(91, 221);
             postfixButton.Name = "postfixButton";
-            postfixButton.Size = new Size(100, 23);
+            postfixButton.Size = new Size(102, 23);
             postfixButton.TabIndex = 11;
             postfixButton.Text = "Apply changes";
             postfixButton.UseVisualStyleBackColor = true;
@@ -155,9 +159,9 @@
             // 
             // numberizeButton
             // 
-            numberizeButton.Location = new Point(93, 175);
+            numberizeButton.Location = new Point(91, 246);
             numberizeButton.Name = "numberizeButton";
-            numberizeButton.Size = new Size(100, 23);
+            numberizeButton.Size = new Size(102, 23);
             numberizeButton.TabIndex = 12;
             numberizeButton.Text = "Apply changes";
             numberizeButton.UseVisualStyleBackColor = true;
@@ -173,12 +177,45 @@
             copyButton.UseVisualStyleBackColor = true;
             copyButton.Click += copyButton_Click;
             // 
+            // randomButton
+            // 
+            randomButton.Location = new Point(12, 50);
+            randomButton.Name = "randomButton";
+            randomButton.Size = new Size(127, 23);
+            randomButton.TabIndex = 14;
+            randomButton.Text = "Generate random!";
+            randomButton.UseVisualStyleBackColor = true;
+            randomButton.Click += randomButton_Click;
+            // 
+            // lengthTrackBar
+            // 
+            lengthTrackBar.Location = new Point(12, 79);
+            lengthTrackBar.Maximum = 15;
+            lengthTrackBar.Minimum = 3;
+            lengthTrackBar.Name = "lengthTrackBar";
+            lengthTrackBar.Size = new Size(127, 45);
+            lengthTrackBar.TabIndex = 15;
+            lengthTrackBar.Value = 3;
+            lengthTrackBar.Scroll += lengthTrackBar_Scroll;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 109);
+            label1.Name = "label1";
+            label1.Size = new Size(107, 15);
+            label1.TabIndex = 16;
+            label1.Text = "Nickname length 3";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(562, 236);
+            ClientSize = new Size(562, 298);
+            Controls.Add(label1);
+            Controls.Add(lengthTrackBar);
+            Controls.Add(randomButton);
             Controls.Add(copyButton);
             Controls.Add(numberizeButton);
             Controls.Add(postfixButton);
@@ -195,6 +232,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Form1";
             Text = "Nick name generator";
+            ((System.ComponentModel.ISupportInitialize)lengthTrackBar).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -213,5 +251,8 @@
         private Button postfixButton;
         private Button numberizeButton;
         private Button copyButton;
+        private Button randomButton;
+        private TrackBar lengthTrackBar;
+        private Label label1;
     }
 }

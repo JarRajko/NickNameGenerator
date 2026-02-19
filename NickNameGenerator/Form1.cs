@@ -130,8 +130,30 @@ namespace NickNameGenerator
             if (labelText.Text != "")
             {
                 Clipboard.SetText(labelText.Text);
-                MessageBox.Show("Text \"" + labelText.Text + "\" copied succesfully!","Success");
+                MessageBox.Show("Text \"" + labelText.Text + "\" copied succesfully!", "Success");
             }
+        }
+
+        private void randomButton_Click(object sender, EventArgs e)
+        {
+            char[] vowels = { 'a', 'e', 'i', 'o', 'u', 'y' };
+            char[] consonants = { 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'r', 's', 't', 'v', 'w', 'x', 'z' };
+
+            Random rand = new Random();
+            _baseNoun = "";
+            for (int i = 0; i < lengthTrackBar.Value; i++)
+            {
+                if (i % 2 == 0)
+                    _baseNoun += consonants[rand.Next(consonants.Length)];
+                else
+                    _baseNoun += vowels[rand.Next(vowels.Length)];
+            }
+            UpdateLabel();
+        }
+
+        private void lengthTrackBar_Scroll(object sender, EventArgs e)
+        {
+            label1.Text = "Nickname length" + " " + lengthTrackBar.Value;
         }
     }
 }
